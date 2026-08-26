@@ -46,3 +46,6 @@ git pull <nome> <nome-da-branch>
 git fetch 
 - atualiza o novo historico local de acordo com o historico salvo la no repositorio remoto
 - sincronizaçõa do local com o remoto 
+
+
+# ![alt text](image.png)
