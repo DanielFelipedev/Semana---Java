@@ -9,9 +9,9 @@ uma prática de desenvolvimento de software que usa automação para construir, 
 
 # ESTRUTURA DE UM SCRIPTS
 
-  NAME: 
-     ON: 
-         PUSH:
-         BRANCHES: 
-               - MAIN
-         JOBS: 
+   > NAME: 
+   >   ON: 
+         >PUSH:
+         > BRANCHES: 
+              > - MAIN
+         >JOBS: 
