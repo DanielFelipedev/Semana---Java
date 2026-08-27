@@ -9,12 +9,9 @@ uma prática de desenvolvimento de software que usa automação para construir, 
 
 # ESTRUTURA DE UM SCRIPTS
 
-> NAME: (ESSE NOME BASICAMENTE É O QUE VAI APARECER QUANDO O GITHUB-ACTIONS ESTIVER EXECUTANDO )  
-> ON: -> ISSO É PRA INDICAR QUANDO ELE DEVE SER EXECUTADO QUE EXEMPLO NESSE SCRIPTS É QUANDO FOR UM PUSH NA BRANCHES MAIN
-    > PUSH:
-    > BRANCHES: 
-    >   - MAIN
-> JOBS: - SÃO ETAPAS BÁSICAMENTE É AS ETAPAS DO SCRIPT 
-
-
-# ![alt text](image.png)
+  NAME: 
+     ON: 
+         PUSH:
+         BRANCHES: 
+               - MAIN
+         JOBS: 
