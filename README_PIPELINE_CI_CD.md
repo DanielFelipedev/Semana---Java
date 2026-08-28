@@ -16,32 +16,24 @@ Básicamente você dizer que está testando se minha integração da minha aplic
 
 # ESTRUTURA DE UM SCRIPTS
 
-    NAME: 
-
-      >   ON: 
-
-            >PUSH: --> essa daqui vai ser a ordem pra executar 
-
-                > BRANCHES: 
-         
-                     > - MAIN --> branche principal que vai ser chamada 
-         
-                  > JOBS: --> Isso daqui se chama básicamente de etapas macro que depende de 
-                              pequenas etaps micro pra executar
-                        > BUILD: 
-                           > RUNS-ON: ubuntu-latest
-                           > STEPS: 
-                                - name: checkout code       ----\
-                                                                 > Ele fica responsável pra fazer o 
-                                                                    git-clone e o checkout pra branche específica que tô cirando na pipeline
-                                  uses: actions/checkout@v2 ----/
-
-                                - name: Set up Node.js         ----------\
-                                  uses: actions/setup-node@v2             \
-                                                                           > - Nessa parte aqui é básicamente fazer uma instalação
-                                                                           >  da linguagem que você escolher, ele precisa disso pra depois
-                                                                           >  instalar as dependências que você precisar pra fazer os teste na aplicação   
-                                  with:                                   /
-                                    node-version: "14"  -----------------/
- 
-                                  - 
+    name: Notificar por email no push
+        on:
+            push:
+        branches:
+            - main
+        
+    jobs:
+        send-email:
+        runs-on: ubuntu-latest
+    steps:
+        - name: Enviar email
+        uses: dawidd6/action-send-mail@v3
+    with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "Novo push no repositório!"
+        to: daniel.felipeandrade2003@gmail.com
+        from: GitHub Actions
+        body: "Você acabou de fazer um push na branch main. Confira: ${{ github.event.head_commit.url }}"
