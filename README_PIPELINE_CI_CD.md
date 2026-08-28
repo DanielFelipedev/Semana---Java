@@ -34,6 +34,6 @@ Básicamente você dizer que está testando se minha integração da minha aplic
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: "Novo push no repositório!"
-        to: daniel.felipeandrade2003@gmail.com
+        to: seuemail@gmail.com
         from: GitHub Actions
         body: "Você acabou de fazer um push na branch main. Confira: ${{ github.event.head_commit.url }}"
